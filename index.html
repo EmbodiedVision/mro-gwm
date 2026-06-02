@@ -4,6 +4,53 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects - Jens U. Kreber, Lukas Mack, Joerg Stueckler">
+  <meta name="description" content="We propose a novel model that learns action-conditional dynamics of rigid objects in 3D. By representing the scene by object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes. We develop a novel spatio-temporal transformer architecture that predicts future rigid body motion from a history of object Gaussians and future actions. Objects are represented by their respective Gaussians in a canonical frame, which allows to describe object motion as a rigid body transformation.">
+  <meta name="keywords" content="Gaussian splatting, action-conditional, object-centric, world model, dynamics model, rigid objects, multi-object, rigid body dynamics, transformer, machine learning, computer vision, robotics, embodied AI">
+  <meta name="author" content="Jens U. Kreber, Lukas Mack, Joerg Stueckler">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="University of Augsburg">
+  <meta property="og:title" content="Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects">
+  <meta property="og:description" content="We propose a novel model that learns action-conditional dynamics of rigid objects in 3D. By representing the scene by object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes. We develop a novel spatio-temporal transformer architecture that predicts future rigid body motion from a history of object Gaussians and future actions. Objects are represented by their respective Gaussians in a canonical frame, which allows to describe object motion as a rigid body transformation.">
+  <meta property="og:url" content="https://embodiedvision.github.io/mro-gwm/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <!-- <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png"> -->
+  <!-- <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview"> -->
+  <meta property="article:published_time" content="2026-06-01T09:12:07.000Z">
+  <meta property="article:author" content="Jens U. Kreber">
+  <meta property="article:author" content="Lukas Mack">
+  <meta property="article:author" content="Joerg Stueckler">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Gaussian splatting">
+  <meta property="article:tag" content="action-conditional">
+  <meta property="article:tag" content="object-centric">
+  <meta property="article:tag" content="world model">
+  <meta property="article:tag" content="rigid objects">
+
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects">
+  <meta name="citation_author" content="Kreber, Jens U.">
+  <meta name="citation_author" content="Mack, Lukas">
+  <meta name="citation_author" content="Stueckler, Joerg">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="arxiv">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.01950">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +58,11 @@
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>Dummy Website - To be filled with content</title>
-  
+  <title>Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects</title>
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -62,17 +112,90 @@
 
 
 <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <!-- <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup> -->
+                Jens U. Kreber,</span>
+              <span class="author-block">
+                <!-- <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup> -->
+                Lukas Mack,</span>
+              <span class="author-block">
+                  <!-- <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a> -->Joerg Stueckler</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="publication-affiliations">Intelligent Perception in Technical Systems Group<br>University of Augsburg, Germany</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2606.01950" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2606.01950" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <!-- <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Dummy Content</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          World models enable intelligent agents to predict the consequences of their actions on the environment.
+          In this paper, we propose Multi Rigid Object Gaussian World Model (MRO-GWM),
+           a novel model that learns action-conditional dynamics of rigid objects in 3D.
+          By representing the scene by object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes.
+          We develop a novel spatio-temporal transformer architecture that predicts future rigid body motion from a history
+            of object Gaussians and future actions.
+          Objects are represented by their Gaussians in a canonical frame, which allows for describing object motion as rigid body
+           transformation.
+          Our model is trained on reconstructions from multiple viewpoints, which requires the model to handle partial
+           observations of objects due to occlusions.
+          We analyze prediction performance of our approach on synthetic datasets composed of typical household objects with
+           multi-object dynamics and interactions by a robot end effector.
+          We also evaluate our model in model-predictive control for non-prehensile manipulation in simulation.
           </p>
         </div>
       </div>
@@ -80,6 +203,145 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+
+<!-- Method Overview -->
+<section class="hero teaser">
+  <div class="container is-max-desktop  has-text-centered">
+    <div class="hero-body">
+      <h2 class="title is-3">Method Overview</h2>
+      <img src="static/images/arch_plain.svg" alt="Method overview. Left: per-object anchors are obtained by object-centric Gaussian splatting. Right: Our proposed spatio-temporal transformer" loading="lazy"/>
+      <!-- TODO: Replace with your video description -->
+      <h2 class="subtitle has-text-centered ">
+        <b>Left:</b> The proposed scene representation: By using object-centric Gaussian splatting, per-object anchors or Gaussians are obtained.
+        These are rigidly transformed to encode the history of scene states given object and end-effector poses.<br/>
+        <b>Right:</b> The proposed spatio-temporal transformer: Spatial grid pooling and spatial attention blocks are combined with temporal attention between points and a newly proposed spatio-temporal attention layer.
+        Given a history and future end-effector poses, future object poses are predicted. \(\hat{\tau}^\text{obj}_i\) indicates predicted object poses and \(\tau^\text{obj}_\emptyset\) a fixed dummy pose. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End Method Overview -->
+
+
+<!-- Predictions -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Predictions</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered">
+            Predicted sequences over horizon 2.4s (right image part) and ground truth (left image part) replayed by rigid transformations of the splatted Gaussian representation.
+            Examples are selected according to their combined prediction error rank from the top 10% quantile of pose changes.
+          </h2>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <div class="item item-video1">
+              <video poster="" id="pred_qual_best" autoplay controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/pred_qual_best_gt+pred.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption">Smallest error rank</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="item item-video1">
+              <video poster="" id="pred_qual_median" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/pred_qual_median_gt+pred.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption">Median error rank</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <div class="item item-video1">
+              <video poster="" id="pred_qual_secondbest" autoplay controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/pred_qual_secondbest_gt+pred.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption"> Second smallest error rank</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="item item-video1">
+              <video poster="" id="pred_qual_worst" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/pred_qual_worst_gt+pred.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption"> Worst error rank</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Predictions -->
+
+
+<!-- Planning -->
+ <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Planning</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered">
+            Episodes from planning with our model in a model-predictive control setting.
+            We visualize successful episodes for two tasks on scenes with 5 objects with the largest initial objective value.
+          </h2>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <div class="item item-video1">
+              <video poster="" id="plan_task1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/plan_succ_task1.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption">Task 1 "push object to position": The center of the screwdriver is successfully aligned with the target position indicated by the green sphere.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <div class="item item-video2">
+              <video poster="" id="plan_task2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/plan_succ_task2.mp4" type="video/mp4">
+              </video>
+              <p class="image-caption">Task 2 "clear middle": All object centers are successfully pushed out of the red region.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Planning -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{MRO-GWM,
+  title={Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects},
+  author={Jens U. Kreber and Lukas Mack and Joerg Stueckler},
+  journal={arXiv preprint arXiv:2606.01950},
+  year={2026},
+  url={https://arxiv.org/abs/2606.01950}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
 
 </main>
 

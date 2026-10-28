@@ -1,6 +1,18 @@
-# Dummy Website
+# Project Website for MRO-GWM Paper
 
-To be filled with content.
+This website contains supplementary material for the paper
+*Jens U. Kreber, Lukas Mack, Joerg Stueckler, "**Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects**"*, arxiv preprint https://arxiv.org/abs/2606.01950
+
+```
+@article{MRO-GWM,
+  title={Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects},
+  author={Jens U. Kreber and Lukas Mack and Joerg Stueckler},
+  journal={arXiv preprint arXiv:2606.01950},
+  year={2026},
+  url={https://arxiv.org/abs/2606.01950}
+}
+```
+
 
 
 ## Acknowledgments

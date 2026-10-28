@@ -184,18 +184,13 @@
         <div class="content has-text-justified">
           <p>
           World models enable intelligent agents to predict the consequences of their actions on the environment.
-          In this paper, we propose Multi Rigid Object Gaussian World Model (MRO-GWM),
-           a novel model that learns action-conditional dynamics of rigid objects in 3D.
-          By representing the scene by object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes.
-          We develop a novel spatio-temporal transformer architecture that predicts future rigid body motion from a history
-            of object Gaussians and future actions.
-          Objects are represented by their Gaussians in a canonical frame, which allows for describing object motion as rigid body
-           transformation.
-          Our model is trained on reconstructions from multiple viewpoints, which requires the model to handle partial
-           observations of objects due to occlusions.
-          We analyze prediction performance of our approach on synthetic datasets composed of typical household objects with
-           multi-object dynamics and interactions by a robot end effector.
-          We also evaluate our model in model-predictive control for non-prehensile manipulation in simulation.
+          In this paper, we propose Multi Rigid Object Gaussian World Model (MRO-GWM), a novel model that learns action-conditional dynamics of rigid objects in 3D.
+          Using object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes.
+          We develop a novel temporal-spatial transformer architecture that predicts future rigid body motion from a history of object Gaussians and future actions.
+          Objects are represented by Gaussians in an object-centric frame, which allows to describe object motion as a rigid body transformation.
+          Our model is trained on reconstructions from multiple viewpoints, which requires the model to also handle partial observations of objects due to occlusions.
+          We analyze prediction performance of our approach on synthetic datasets composed of typical household objects with multi-object dynamics and interactions by a robot end effector.
+          We also evaluate our model in model-predictive control for non-prehensile manipulation in simulation and for image-based tracking and prediction of object motion in simulated and real-world scenes.
           </p>
         </div>
       </div>
@@ -210,13 +205,21 @@
   <div class="container is-max-desktop  has-text-centered">
     <div class="hero-body">
       <h2 class="title is-3">Method Overview</h2>
-      <img src="static/images/arch_plain.svg" alt="Method overview. Left: per-object anchors are obtained by object-centric Gaussian splatting. Right: Our proposed spatio-temporal transformer" loading="lazy"/>
-      <!-- TODO: Replace with your video description -->
+      <img src="static/images/overview.svg" loading="lazy" style="max-width: 75%; margin-bottom: 20px;" />
       <h2 class="subtitle has-text-centered ">
-        <b>Left:</b> The proposed scene representation: By using object-centric Gaussian splatting, per-object anchors or Gaussians are obtained.
-        These are rigidly transformed to encode the history of scene states given object and end-effector poses.<br/>
-        <b>Right:</b> The proposed spatio-temporal transformer: Spatial grid pooling and spatial attention blocks are combined with temporal attention between points and a newly proposed spatio-temporal attention layer.
-        Given a history and future end-effector poses, future object poses are predicted. \(\hat{\tau}^\text{obj}_i\) indicates predicted object poses and \(\tau^\text{obj}_\emptyset\) a fixed dummy pose. 
+        Gaussian representations are obtained by object-centric Gaussian splatting.
+        The Gaussians are efficiently encoded in anchors.
+        The Gaussian-based shape representations are rigidly transformed by the history of recent object and end-effector poses as input to a transformer that predicts the future object poses. 
+        Additionally, we condition the dynamics prediction on the future robot end-effector poses as actions by also inputting their Gaussian-based shape representation into the transformer.
+      </h2>
+      <br>
+      <img src="static/images/architecture.svg" loading="lazy" style="margin-bottom: 20px;"/>
+      <h2 class="subtitle has-text-centered ">
+        Dynamics prediction transformer. Top left: temporal and temporal-spatial attention relates all spatially corresponding tokens along the temporal dimensions.
+        Bottom left: spatial attention relates tokens at the same time step which are in a local spatial neighborhood.
+        Right: temporal-spatial transformer:
+        Spatial grid pooling and spatial attention blocks are combined with temporal attention and a newly proposed temporal-spatial attention layer.
+        Given a history and future end-effector poses, future object poses are predicted. \(\hat{\tau}^\text{obj}_i\) indicate predicted poses and \(\tau^\text{obj}_\emptyset\) a fixed dummy pose.
       </h2>
     </div>
   </div>
@@ -320,6 +323,62 @@
   </div>
 </section>
 <!-- End Planning -->
+
+<!-- Tracking -->
+ <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Real-World Tracking</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered">
+            We capture multi-view RGB-D images and obtain poses with ORB-SLAM3 and object masks with SAM3.
+            We track each object with its Gaussian representation using FoundationPose (right) and compare to the ground truth video (left).
+          </h2>
+        </div>
+      </div>
+        <div class="content">
+          <div class="item item-video1">
+            <video poster="" id="track-1" controls autoplay muted loop height="100%" preload="metadata">
+              <source src="static/videos/rw_tracking_sequential.mp4" type="video/mp4">
+            </video>
+          <p class="image-caption">Object poses are accurately tracked with minor noisy perturbations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Tracking -->
+
+
+<!-- Real world prediction -->
+ <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Real-World Prediction</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered">
+            We use our real-world tracking pipeline to obtain a history of object poses and directly apply a model trained in simulation to predict future poses over horizon 2.4s.
+            We show predictions on the right and ground-truth video on the left.
+          </h2>
+        </div>
+      </div>
+        <div class="content"> 
+          <div class="item item-video1">
+            <video poster="" id="pred-rw-1" controls muted loop height="100%" preload="metadata">
+              <source src="static/videos/rw_pred_sequential.mp4" type="video/mp4">
+            </video>
+            <p class="image-caption">Initially, plausible interactions between objects and the end-effector are predicted.
+              At later steps in the second scene, the model misses the interaction between box and end effector, presumably as prediction gets out of distribution due to compounding prediction errors or insufficient training data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Real world prediction -->
+
+
 
 
 <!--BibTex citation -->
